@@ -1,7 +1,6 @@
 <?php 
      $this->load->view('BAC/layouts/head');
 	 $this->load->view('BAC/layouts/header');
-	//  $this->load->view('BAC/layouts/sidebar');
 ?>  
 	   <style>
 			.profile{
