@@ -94,5 +94,4 @@ class UserManagementController extends CI_Controller
         $this->db->where('projects_id', $projects_id);
         $this->db->delete('projects');
     }
-   
 }
