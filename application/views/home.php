@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img src="<?php echo base_url()."assets/"; ?>logo/logo-temp1.svg" style="width: 200px;"></a>
+            <!-- <a class="navbar-brand" href="#"> <img src="<?php echo base_url()."assets/"; ?>logo/logo-temp1.svg" style="width: 200px;"></a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a class="nav-link  text-light" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="http://localhost/BIMS/login-register.html">Login/Register</a>
+                        <a class="nav-link text-light" href="http://localhost/bims/login-register.html">Login/Register</a>
                     </li>
                 </ul>
             </div>

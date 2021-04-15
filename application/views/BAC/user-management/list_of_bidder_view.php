@@ -50,7 +50,7 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li class="start dashboard">
-					<a href="http://localhost/BIMS/page/staff.html">
+					<a href="http://localhost/bims/page/staff.html">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
 					</a>
@@ -63,18 +63,18 @@
 				</li>
 				<li class="active open user_management">
 					<a href="javascript:;">
-					<i class="icon-rocket"></i>
+					<i class="fa fa-users"></i>
 					<span class="title">User Management</span>
 					<span class="selected"></span>
 					<span class="arrow open"></span>
 					</a>
 					<ul class="sub-menu">
 						<li class="active certified_bidder">
-							<a href="http://localhost/BIMS/usermanagement/certified-bidder.html">
+							<a href="http://localhost/bims/usermanagement/certified-bidder.html">
 							List Of Certified Bidder</a>
 						</li>
 						<li class="new_bidder_entry">
-							<a href="http://localhost/BIMS/usermanagement/new-entry.html">
+							<a href="http://localhost/bims/usermanagement/new-entry.html">
 							List Of New Bidder Entry</a>
 						</li>
 					</ul>
@@ -87,7 +87,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li class="list_of_tender">
-							<a href="http://localhost/BIMS/tendermanagement.html">
+							<a href="http://localhost/bims/tendermanagement.html">
 							List Of Tenders</a>
 						</li>
 						<li class="bids_submitted">
@@ -98,20 +98,20 @@
 				</li>
 				<li>
 					<a href="javascript:;">
-					<i class="icon-diamond"></i>
+					<i class="icon-briefcase"></i>
 					<span class="title">Bid Opening</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="http://localhost/BIMS/bidopening.html">
+							<a href="http://localhost/bims/bidopening.html">
 							Tenders</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="javascript:;">
-					<i class="icon-puzzle"></i>
+					<i class="icon-bar-chart"></i>
 					<span class="title">Bid Evaluation</span>
 					<span class="arrow "></span>
 					</a>
