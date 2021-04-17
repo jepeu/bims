@@ -37,12 +37,14 @@ class LoginRegister extends CI_Controller{
                 redirect('page/admin');
             }
              // access login for Bid and Awards Committe
-            elseif($type === 'BAC')
+            elseif($type === 'BAC' || $type === 'HEAD-BAC' )
             {
                 redirect('page/staff');
             }
              // access login for Technical Working Group
-            elseif($type === 'TWG')
+
+
+            elseif($type === 'TWG' ||  $type === 'HEAD-TWG')
             {
                 redirect('page/staff');
             }
@@ -86,12 +88,6 @@ class LoginRegister extends CI_Controller{
                 }
             }
     } 
-    
-    public function view_certificate(){ 
-        
-        
-    } 
-
 
     function logout()
     {

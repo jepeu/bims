@@ -5,6 +5,8 @@ if (!defined('BASEPATH'))
 
 class TenderManagementController extends CI_Controller
 {
+    // controller functions note
+    // The head of Bid and Awards Committee is alowed to create , update and delete the project and only alowed  to update and delete if the project status is new
     function __construct()
     {
         parent::__construct();
@@ -13,29 +15,25 @@ class TenderManagementController extends CI_Controller
 
     public function index()
     {
-        $sql="select * from projects where delete_status != 1"; 
-        $query = $this->db->query($sql);
-
-        if($query){
-            $data = array(
-                'projects_data' => $query->result(),
-                'session_user_id'=>   $this->session->userdata('user_id')
-            );
-        }
-       
-        $this->load->view('BAC/tender-management/list_of_tenders_view', $data);
-        return $data;
+        $this->load->view('BAC/tender-management/list_of_tenders_view');
     }
     
+
     public function ajax_table_projects_show()
     {
         $sql="select * from projects where delete_status != 1"; 
         $query = $this->db->query($sql);
+
+        $sql2 ="select user_type from users where user_type = 'HEAD-BAC' ";
+        $query2 = $this->db->query($sql2);
+        $user = $query2->result();
+       
+
         $table_data ="";
 
-        if($query){
+        // if($query){
             
-            $start = 1;
+                $start = 1;
                 foreach ($query->result() as $projects)
                 {
                     $table_data .= '<tr class="gradeX odd" role="row" id="'.$projects->projects_id.'">
@@ -46,14 +44,24 @@ class TenderManagementController extends CI_Controller
                     <td>'. $projects->opening_date .'</td>
                     <td>'.$projects->approve_budget_cost.'</td>
                     <td>'. $projects->projects_status.'</td>
-                    <td>
-                        <a href="javascript:void(0);"  data-projects_id="'.$projects->projects_id.'" data-projects_description="'.$projects->projects_description.'" data-projects_type="'.$projects->projects_type.'" data-opening_date="'. $projects->opening_date .'" data-approve_budget_cost="'. $projects->approve_budget_cost .'" class="editRecord btn btn-success" role="button">Update</a>
-                 
-                        <a href="javascript:void(0)" class="btn btn-danger deleteRecord" data-projects_id="'.$projects->projects_id.'">Delete</a>                        
-                    </td>
-                </tr>';
+                    ';
+                        // var_dump($user[0]->user_type);
+                        // exit();
+                    
+                        //  echo $user[0]->user_type;
+                        // if($user[0]->user_type == "HEAD-BAC")
+                        
+                        if($this->session->userdata('type') == "HEAD-BAC")
+                        {
+                            $table_data .= '
+                                <td>  
+                                    <a href="javascript:void(0);"  data-projects_id="'.$projects->projects_id.'" data-projects_description="'.$projects->projects_description.'" data-projects_type="'.$projects->projects_type.'" data-opening_date="'. $projects->opening_date .'" data-approve_budget_cost="'. $projects->approve_budget_cost .'" class="editRecord btn btn-success" role="button">Update</a>
+                                    <a href="javascript:void(0);" class="btn btn-danger deleteRecord" data-projects_id="'.$projects->projects_id.'">Delete</a>
+                                </td>
+                            </tr>';
+                        }
                 }
-        }
+        // }
        
         echo $table_data;
         die;

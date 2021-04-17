@@ -24,14 +24,14 @@ class Page extends CI_Controller{
     
       function staff(){
         //Allowing access to staff only
-        if($this->session->userdata('type')==='BAC')
+        if($this->session->userdata('type')==='BAC' || $this->session->userdata('type')==='HEAD-BAC')
         {
           
           $this->load->view('BAC/dashboard_view');
 
 
         }
-        else if($this->session->userdata('type')==='TWG')
+        else if($this->session->userdata('type')==='TWG' || $this->session->userdata('type')==='HEAD-TWG')
         {
           $this->load->view('dashboard_view_twg');
         }

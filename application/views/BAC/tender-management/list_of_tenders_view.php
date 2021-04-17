@@ -393,7 +393,10 @@
 									<div class="col-md-6">
 										<div class="btn-group">
 											<!-- <button id="sample_editable_1_new" class="btn green">Add New Tender <i class="fa fa-plus"></i></button> -->
-                                            <a href="javascript:void(0);"  id="create_new_tender_button" class="btn green">Create New Tender <i class="fa fa-plus"></i></a>
+										<?php if($this->session->userdata('type') == "HEAD-BAC")
+											{?>
+												<a href="javascript:void(0);"  id="create_new_tender_button" class="btn green">Create New Tender <i class="fa fa-plus"></i></a>
+										<?php };?>
                                         </div>
 									</div>
 									<div class="col-md-6">
@@ -428,7 +431,11 @@
 											<th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" aria-label="Joined: activate to sort column ascending" style="width: 258px;">Bid Opening Date</th>
 											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Approved Budget Cost</th>
 											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Status</th>
-											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Action</th>
+											<?php if($this->session->userdata('type') == "HEAD-BAC")
+											{?>
+												<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Action</th>
+											<?php };?>
+											
 										</tr>
 									</thead>
 									<tbody class="table_data" >
