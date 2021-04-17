@@ -23,11 +23,12 @@
 				margin-top: 10px;
 			}
 			.userbox{
-				margin: 5px;
+				margin: 10px;
 				flex: 1 1 0px;
 				box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
-				padding: 10px 20px;
-				max-width: min-content;
+				padding: 20px;
+				max-width: 280px;
+				/* max-width: min-content; */
 			}
 			.circle2 {
 				background: green;
@@ -82,16 +83,7 @@
 <div class="page-container">
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
-		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 		<div class="page-sidebar navbar-collapse collapse">
-			<!-- BEGIN SIDEBAR MENU -->
-			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 			<ul class="page-sidebar-menu page-sidebar-menu-light " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
 				<li class="sidebar-toggler-wrapper">
@@ -102,9 +94,6 @@
 				</li>
 				<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 				<li class="sidebar-search-wrapper">
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
-					<!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
 					<form class="sidebar-search " action="extra_search.html" method="POST">
 						<a href="javascript:;" class="remove">
 						<i class="icon-close"></i>
@@ -393,7 +382,7 @@
 					</div>
                     <div class="alert alert-block alert-info fade in">
                         <button type="button" class="close" data-dismiss="alert"></button>
-                        <h4 style="margin-bottom: 0px;"><i class="fa fa-exclamation-triangle"></i> All the Bid Openers should decrypt the key.</h4>  
+                        <h4 style="margin-bottom: 0px;"><i class="fa fa-exclamation-triangle"></i> All departments head should decrypt the key</h4>  
                     </div>
                     <div class="portlet box" style="background-color: #364150;">
                         <div class="portlet-title">
@@ -414,85 +403,41 @@
 						<div style="text-align: center; margin: 20px 0">
 							<button class="buttonload btn btn-primary"><i class="refresh_icon"></i>refresh</button>
 						</div>
-							<div class="box-col col-lg-6"style="display: flex; justify-content: center; text-align: center;">
-								<div class="row bid-opener-row1">
-									<h2 style="margin: 20px auto; font-weight: 700;">BID AND AWARDS COMMITTEE</h2>
-									<div class="row" style="display: inline-flex; flex-wrap: wrap; justify-content: center;">
-										<?php foreach($users_bid_opener as $users){?>
+							<div class="box-col col-lg-12"style="display: flex; flex-wrap: wrap; justify-content: center; text-align: center;">
+								<!-- <h2 style="margin: 20px auto; font-weight: 700;">BID AND AWARDS COMMITTEE HEAD</h2> -->
+								<?php foreach($users_bid_opener as $users){?>
 
-												<?php if($users->user_type == "BAC" ) {?>
-													<div class="userbox">
-														<div class="">
-															<div class="portlet-body bid-opener-box-body">
-																<img class="profile" src="<?php echo base_url()."assets/"; ?>images/profile.svg" alt="Picture of Vivian Williams">
-																
-																<?php if($users->decrypt_status === "1"){?>
-																		<div class="circle" style="background-color: green!important;"></div>
-																<?php }
-																	else{?>
-																		<div class="circle"></div>
-																<?php }?>
-																
-																<div class="u_name">
-																	<h4 style="text-align: center; font-weight: 500; text-transform: capitalize;"><?php echo $users->firstname;?> <?php echo $users->lastname;?></h4>
-																</div>
-																<?php if($users->user_id == $session_user_id){?>
-																	<form id="decryptForm1" method="post">
-																		<input id="project_openers_id_bac" style="margin: 10px 0;" type="hidden" value="<?php echo $users->project_openers_id; ?>">
-																		<input id="project_id_bac" style="margin: 10px 0;" type="hidden" value="<?php echo $projects_id; ?>">
-																		<input id="opener_id_bac" style="margin: 10px 0;" type="hidden" value="<?php echo $session_user_id; ?>">
-																		<?php if($users->decrypt_status !== "1"){?>
-																			<button class="decrypt decrypt_bac btn btn-primary" style="margin: 10px 0;"><i class="refresh_icon"></i>DECRYPT</button>
-																		<?php }?>
-																	</form>
-																<?php }?>
-															</div>
+										<?php if($users->user_type == "HEAD-BAC" || $users->user_type == "HEAD-TWG") {?>
+											<div class="userbox">
+												<div class="">
+													<div class="portlet-body bid-opener-box-body">
+														<img class="profile" src="<?php echo base_url()."assets/"; ?>images/profile.svg" alt="Picture of Vivian Williams">
+														
+														<?php if($users->decrypt_status === "1"){?>
+																<div class="circle" style="background-color: green!important;"></div>
+														<?php }
+															else{?>
+																<div class="circle"></div>
+														<?php }?>
+														
+														<div class="u_name">
+															<h4 style="text-align: center; font-weight: 500; text-transform: capitalize;"><?php echo $users->firstname;?> <?php echo $users->lastname;?></h4>
 														</div>
+														<?php if($users->user_id == $session_user_id){?>
+															<form id="decryptForm" method="post">
+																<input id="project_openers_id" style="margin: 10px 0;" type="hidden" value="<?php echo $users->project_openers_id; ?>">
+																<input id="project_id" style="margin: 10px 0;" type="hidden" value="<?php echo $projects_id; ?>">
+																<input id="opener_id" style="margin: 10px 0;" type="hidden" value="<?php echo $session_user_id; ?>">
+																<?php if($users->decrypt_status !== "1"){?>
+																	<button class="decrypt decrypt_user btn btn-primary" style="margin: 10px 0;"><i class="refresh_icon"></i>DECRYPT</button>
+																<?php }?>
+															</form>
+														<?php }?>
 													</div>
-												<?php } ?>
+												</div>
+											</div>
 										<?php } ?>
-									</div>
-								</div>
-							</div>
-							<div class="box-col col-lg-6"style="display: flex; justify-content: center; text-align: center;">
-								<div class="row bid-opener-row2">
-									<h2 style="margin: 20px 0; font-weight: 700;">TECHNICAL WORKING GROUP</h2>
-									<div class="row" style="display: inline-flex; flex-wrap: wrap;justify-content: center;">
-										<?php foreach($users_bid_opener as $users){?>
-													<?php if($users->user_type == "TWG") {?>
-														<div class="userbox" style="float: none;">
-															<div class="">
-																<div class="portlet-body bid-opener-box-body">
-																	<img class="profile" src="<?php echo base_url()."assets/"; ?>images/profile.svg" alt="Picture of Vivian Williams">
-
-																	<?php if($users->decrypt_status === "1"){?>
-																		<div class="circle" style="background-color: green!important;"></div>
-																	<?php }
-																		else{?>
-																			<div class="circle"></div>
-																	<?php }?>
-
-																	<div class="u_name">
-																		<h4 style="text-align: center; font-weight: 500; text-transform: capitalize;"><?php echo $users->firstname;?> <?php echo $users->lastname;?></h4>
-																	</div>
-																	<?php if($users->user_id == $session_user_id){?>
-																		<form id="decryptForm2" method="post">
-																			<input id="project_openers_id_twg" style="margin: 10px 0;" type="hidden" value="<?php echo $users->project_openers_id; ?>">
-																			<input id="project_id_twg" style="margin: 10px 0;" type="hidden" value="<?php $projects_id; ?>">
-																			<input id="opener_id_twg" style="margin: 10px 0;" type="hidden" value="<?php $session_user_id; ?>">
-																			<?php if($users->decrypt_status !== "1"){?>
-																			<button class="decrypt decrypt_twg btn btn-primary" style="margin: 10px 0;"><i class="refresh_icon"></i>DECRYPT</button>
-																			<?php }?>
-																		</form>
-																	<?php }?>
-																</div>
-															</div>
-														</div>
-													<?php} ?>
-											<?php } ?>
-										<?php } ?>
-									</div>
-								</div>
+								<?php } ?>
 							</div>
 						</div>
                     </div>
@@ -500,112 +445,86 @@
 				</div>
 					</div>
 				</div>
-			<!-- END PAGE CONTENT-->
-			</div>
+		<!-- END PAGE CONTENT-->
 		</div>
-		<!-- END CONTENT -->
-		<?php
-			$this->load->view('BAC/layouts/quick_sidebar');
-			$this->load->view('BAC/layouts/footer');
-		?>												
+	</div>
+	<!-- END CONTENT -->
+
+<?php
+	$this->load->view('BAC/layouts/quick_sidebar');
+	$this->load->view('BAC/layouts/footer');
+?>												
 
 
-		<script  type="text/javascript">
-			jQuery(window).load(function() {
+<script  type="text/javascript">
+	jQuery(window).load(function() {
 
-				var maxHeight = 0;
-				jQuery('div.bid-opener-box-body').each(function(){
-					var thisH = $(this).innerHeight();
-					if (thisH > maxHeight) { 
-						maxHeight = thisH; 
-					}
-				});
-				jQuery('div.bid-opener-box-body').height(maxHeight);
-			});
-    	</script>
-		<script>
-			jQuery(document).ready(function() {
-				
-				//BAC FORM 
-				jQuery('#decryptForm1').submit('click',function(e){
-					e.preventDefault();
-
-					// var decryptData = $('#decrypt_bac').val();
-					var p_opener_id = $('#project_openers_id_bac').val();
-					var opener_id = $('#opener_id_bac').val();
-					var project_id = $('#project_id_bac').val();
-
-					// console.log(decryptData);
-					console.log(opener_id);
-					console.log(project_id);
-					var ajaxurl = "<?php echo base_url(); ?>BidOpeningController/decrypt_project";
-
-					var data = { 
-								project_openers_id: p_opener_id,
-								decrypt_status: 1,
-								users_user_id: opener_id,
-								projects_projects_id: project_id
-							};
-
-					jQuery.post(ajaxurl, data, function(response) {
-						// alert("successfully decrypted");
-																
-					}).fail(function(xhr, status, error) {
-							console.log(status);
-							console.log(error);
-					});
-				});
-
-				//TWG FORM 
-				jQuery('#decryptForm2').submit('click',function(e){
-					e.preventDefault();
-
-					// var decryptData = $('#decrypt_twg').val();
-					var p_opener_id = $('#project_openers_id_twg').val();
-					var opener_id = $('#opener_id_twg').val();
-					var project_id = $('#project_id_twg').val();
-
-
-					// console.log(decryptData);
-					console.log(opener_id);
-					console.log(project_id);
-
-					var ajaxurl = "<?php echo base_url(); ?>BidOpeningController/decrypt_project";
-					
-					var data = { 
-								project_openers_id: p_opener_id,
-								decrypt_status: 1,	
-								users_user_id: opener_id,
-								projects_projects_id: project_id
-							};
-
-					jQuery.post(ajaxurl, data, function(response) {
-						// alert(data);
-																
-					}).fail(function(xhr, status, error) {
-							console.log(status);
-							console.log(error);
-					});
-				});
-			});
-
-
-		// loading button
-		jQuery('.buttonload').click(function(){
-			jQuery('.buttonload .refresh_icon').addClass("fa fa-refresh fa-spin")
-
-			setTimeout(function(){
-				jQuery('.buttonload .refresh_icon').removeClass("fa fa-refresh fa-spin")
-			}, 5000);
+		var maxHeight = 0;
+		jQuery('div.bid-opener-box-body').each(function(){
+			var thisH = $(this).innerHeight();
+			if (thisH > maxHeight) { 
+				maxHeight = thisH; 
+			}
 		});
+		jQuery('div.bid-opener-box-body').height(maxHeight);
+	});
+</script>
+<script>
+	jQuery(document).ready(function() {
+		
+		//BAC FORM 
+		jQuery('#decryptForm').submit('click',function(e){
+			e.preventDefault();
 
-		jQuery('.decrypt').click(function(){
-			jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin")
+			// var decryptData = $('#decrypt_user').val();
+			var p_opener_id = $('#project_openers_id').val();
+			var opener_id = $('#opener_id').val();
+			var project_id = $('#project_id').val();
 
-			setTimeout(function(){
-				jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin")
-			}, 5000);
+			// console.log(decryptData);
+			console.log(opener_id);
+			console.log(project_id);
+			var ajaxurl = "<?php echo base_url(); ?>BidOpeningController/decrypt_project";
+
+			var data = { 
+						project_openers_id: p_opener_id,
+						decrypt_status: 1,
+						users_user_id: opener_id,
+						projects_projects_id: project_id
+					};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				// alert("successfully decrypted");
+				jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin")
+
+				setTimeout(function(){
+					jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin")
+				}, 3000);	
+
+			}).fail(function(xhr, status, error) {
+					console.log(status);
+					console.log(error);
+			});
 		});
+	});
 
-        </script>
+
+	// loading button
+	jQuery('.buttonload').click(function(){
+		jQuery('.buttonload .refresh_icon').addClass("fa fa-refresh fa-spin")
+
+		setTimeout(function(){
+			jQuery('.buttonload .refresh_icon').removeClass("fa fa-refresh fa-spin")
+		}, 5000);
+	});
+
+	// jQuery('.decrypt').click(function(){
+	// 	jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin")
+
+	// 	setTimeout(function(){
+	// 		jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin")
+	// 	}, 5000);
+	// });
+
+</script>
 		

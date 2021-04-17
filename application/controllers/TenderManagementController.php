@@ -70,7 +70,7 @@ class TenderManagementController extends CI_Controller
     {
 
         // ajax insert data
-        $sql="Select user_id from users where user_type='BAC' or user_type='TWG'"; 
+        $sql="Select user_id from users where user_type='HEAD-BAC' or user_type='HEAD-TWG'"; 
         $query = $this->db->query($sql)->result();
 
         $data = array(				
