@@ -677,7 +677,7 @@
 			// get data from project table
 			$.ajax({
 				type  : 'get',
-				url   : '<?php echo site_url('TenderManagementController/ajax_table_projects_show')?>',
+				url   : '<?php echo base_url('TenderManagementController/ajax_table_projects_show')?>',
 				async : true,
 				success : function(data){
 					

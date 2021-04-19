@@ -3,6 +3,12 @@
 	 $this->load->view('BAC/layouts/header');
 ?>  
 	   <style>
+	   		#decryptForm{
+				display: flex; 
+				flex-wrap: wrap;
+				justify-content: center; 
+				text-align: center;
+			   }
 			.profile{
 				background-color: gray;
 				border-radius: 100%;
@@ -403,41 +409,8 @@
 						<div style="text-align: center; margin: 20px 0">
 							<button class="buttonload btn btn-primary"><i class="refresh_icon"></i>refresh</button>
 						</div>
-							<div class="box-col col-lg-12"style="display: flex; flex-wrap: wrap; justify-content: center; text-align: center;">
-								<!-- <h2 style="margin: 20px auto; font-weight: 700;">BID AND AWARDS COMMITTEE HEAD</h2> -->
-								<?php foreach($users_bid_opener as $users){?>
-
-										<?php if($users->user_type == "HEAD-BAC" || $users->user_type == "HEAD-TWG") {?>
-											<div class="userbox">
-												<div class="">
-													<div class="portlet-body bid-opener-box-body">
-														<img class="profile" src="<?php echo base_url()."assets/"; ?>images/profile.svg" alt="Picture of Vivian Williams">
-														
-														<?php if($users->decrypt_status === "1"){?>
-																<div class="circle" style="background-color: green!important;"></div>
-														<?php }
-															else{?>
-																<div class="circle"></div>
-														<?php }?>
-														
-														<div class="u_name">
-															<h4 style="text-align: center; font-weight: 500; text-transform: capitalize;"><?php echo $users->firstname;?> <?php echo $users->lastname;?></h4>
-														</div>
-														<?php if($users->user_id == $session_user_id){?>
-															<form id="decryptForm" method="post">
-																<input id="project_openers_id" style="margin: 10px 0;" type="hidden" value="<?php echo $users->project_openers_id; ?>">
-																<input id="project_id" style="margin: 10px 0;" type="hidden" value="<?php echo $projects_id; ?>">
-																<input id="opener_id" style="margin: 10px 0;" type="hidden" value="<?php echo $session_user_id; ?>">
-																<?php if($users->decrypt_status !== "1"){?>
-																	<button class="decrypt decrypt_user btn btn-primary" style="margin: 10px 0;"><i class="refresh_icon"></i>DECRYPT</button>
-																<?php }?>
-															</form>
-														<?php }?>
-													</div>
-												</div>
-											</div>
-										<?php } ?>
-								<?php } ?>
+							<div class="openers_data">
+								<!-- ajax load here ----------------------------------------------------------------------->
 							</div>
 						</div>
                     </div>
@@ -471,41 +444,75 @@
 </script>
 <script>
 	jQuery(document).ready(function() {
-		
-		//BAC FORM 
-		jQuery('#decryptForm').submit('click',function(e){
-			e.preventDefault();
-
-			// var decryptData = $('#decrypt_user').val();
-			var p_opener_id = $('#project_openers_id').val();
-			var opener_id = $('#opener_id').val();
-			var project_id = $('#project_id').val();
-
-			// console.log(decryptData);
-			console.log(opener_id);
-			console.log(project_id);
-			var ajaxurl = "<?php echo base_url(); ?>BidOpeningController/decrypt_project";
-
-			var data = { 
-						project_openers_id: p_opener_id,
-						decrypt_status: 1,
-						users_user_id: opener_id,
-						projects_projects_id: project_id
-					};
-
-			jQuery.post(ajaxurl, data, function(response) {
-				// alert("successfully decrypted");
-				jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin")
-
-				setTimeout(function(){
-					jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin")
-				}, 3000);	
-
-			}).fail(function(xhr, status, error) {
-					console.log(status);
-					console.log(error);
-			});
+		// get data ajax
+		$.ajax({
+			type  : 'get',
+			url   : '<?php echo base_url('BidOpeningController/bid_openers_ajax_show')?>/<?php echo $projects_id ?>',
+			async : true,
+			success : function(data){
+				console.log("ok");
+				$('.openers_data').html(data);
+			}
 		});
+		console.log("ok2");
+
+		jQuery(window).load(function() {
+			// //FORM 
+			jQuery('#decryptForm').submit('click',function(e){
+				e.preventDefault();
+				// var decryptData = $('#decrypt_user').val();
+				var p_opener_id = $('#project_openers_id').val();
+				var opener_id = $('#opener_id').val();
+				var project_id = $('#project_id').val();
+
+				// console.log(decryptData);
+				console.log(opener_id);
+				console.log(project_id);
+				var ajaxurl = "<?php echo site_url();?>BidOpeningController/decrypt_project";
+
+				var data = { 
+							project_openers_id: p_opener_id,
+							decrypt_status: 1,
+							users_user_id: opener_id,
+							projects_projects_id: project_id
+						};
+
+				jQuery.post(ajaxurl, data, function(response) {
+
+					jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin");
+
+					$.ajax({
+						type  : 'get',
+						url   : '<?php echo base_url('BidOpeningController/bid_openers_ajax_show')?>/<?php echo $projects_id ?>',
+						async : true,
+						success : function(data){
+							setTimeout(function(){
+								jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin");
+								swal("Unlock!", "Project has been Unlock!", "success");
+								$('.openers_data').html(data);
+							}, 1000);	
+							
+						}
+					});
+				}).fail(function(xhr, status, error) {
+						console.log(status);
+						console.log(error);
+				});
+			});
+			
+		});
+		// refresh every 5 seconds
+		setInterval(function(){ 
+				$.ajax({
+					type  : 'get',
+					url   : '<?php echo base_url('BidOpeningController/bid_openers_ajax_show')?>/<?php echo $projects_id ?>',
+					async : true,
+					success : function(data){
+						console.log("refresh ajax data");
+						$('.openers_data').html(data);
+					}
+				});
+			}, 3000);
 	});
 
 
@@ -517,14 +524,5 @@
 			jQuery('.buttonload .refresh_icon').removeClass("fa fa-refresh fa-spin")
 		}, 5000);
 	});
-
-	// jQuery('.decrypt').click(function(){
-	// 	jQuery('.decrypt .refresh_icon').addClass("fa fa-spinner fa-spin")
-
-	// 	setTimeout(function(){
-	// 		jQuery('.decrypt .refresh_icon').removeClass("fa fa-spinner fa-spin")
-	// 	}, 5000);
-	// });
-
 </script>
 		
