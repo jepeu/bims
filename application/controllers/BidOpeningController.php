@@ -86,10 +86,10 @@ class BidOpeningController extends CI_Controller
                                                 
 
                                                 if($openers->decrypt_status === "1"){
-                    $openers_data .=                '<div class="circle" style="background-color: green!important;"></div>';
+                    $openers_data .=                '<div class="circle decript_unlock" id="'.$openers->user_id.'"></div>';
                                                 }
                                                 else{
-                    $openers_data .=                '<div class="circle"></div>';
+                    $openers_data .=                '<div class="circle decript_lock" id="'.$openers->user_id.'"></div>';
                                                 }
                                                 
                     $openers_data .=            '<div class="u_name">
@@ -117,6 +117,8 @@ class BidOpeningController extends CI_Controller
 
     }
 
+    
+
     public function decrypt_project() 
     {
 			
@@ -130,6 +132,8 @@ class BidOpeningController extends CI_Controller
         $this->db->update('project_openers');
 
     }
+
+
 
     public function check_opener_decrypt_project_status() 
     {

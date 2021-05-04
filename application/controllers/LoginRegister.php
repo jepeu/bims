@@ -49,7 +49,7 @@ class LoginRegister extends CI_Controller{
                 redirect('page/staff');
             }
              // access login for bidder
-            elseif($type === 'bidder')
+            elseif($type === 'BIDDER')
             {
                 redirect('page/bidder');
             }

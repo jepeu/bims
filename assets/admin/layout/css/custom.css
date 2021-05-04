@@ -64,9 +64,13 @@ Change Quick Sidebar Width
 }
 */
 
-.second.line {
+
+/* ------------- clock v1 design -----------------------*/
+
+
+/* .second.line {
     background-color: #e6194B;
-}
+} 
 
 .center {
     display: flex;
@@ -75,15 +79,16 @@ Change Quick Sidebar Width
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #00BCD4;
-    padding: 10px;
+    background-color: #3d3d3d;
+    padding: 15px;
+    z-index: 9;
 }
 
 .clock_container {
     border-radius: 50%;
     width: 75px;
     height: 75px;
-    border: 8px solid #222222;
+    border: 8px solid #bbbbbb;
     box-shadow: 0 0 5px rgb(92, 92, 92);
 }
 
@@ -139,8 +144,8 @@ Change Quick Sidebar Width
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
-    /* color: rgb(233, 233, 233); */
-    color: black;
+    margin-top: 10px;
+    color: white;
 }
 
 .tiktok {
@@ -149,4 +154,242 @@ Change Quick Sidebar Width
     width: 50%;
     height: 1%;
     transform: translate(0, -50%);
+} */
+
+.page-header.navbar {
+    background-color: #003924;
+}
+
+body {
+    background-color: #005841;
+}
+
+
+/*----------- color scheme -------- */
+
+.red-dark {
+    background-color: #650000 !important;
+    color: white;
+}
+
+.red-light {
+    background-color: #850000 !important;
+    color: white;
+}
+
+.gold-dark {
+    background-color: #AF9500 !important;
+    color: white;
+}
+
+.gold-light {
+    background-color: #CCB33B !important;
+    color: white;
+}
+
+.green-dark {
+    background-color: #003924 !important;
+    color: white;
+}
+
+.green-light {
+    background-color: #005841 !important;
+    color: white;
+}
+
+
+/* hover */
+
+.red-dark:hover,
+.red-light:hover,
+.gold-dark :hover,
+.gold-light:hover,
+.green-dark:hover,
+.green-light:hover {
+    color: white;
+}
+
+
+/* -------------------------- */
+
+
+/* ------------------------------------------ sidebar --------------------------------------------------------------------- */
+
+.page-sidebar {
+    background-color: #005841;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li.active>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li.active.open>a,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li.active>a,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li.active.open>a {
+    background: #AF9500;
+    border-left: 4px solid #AF9500;
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li.active>a:hover,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li.active.open>a:hover,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li.active>a:hover,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li.active.open>a:hover {
+    background: #AF9500;
+    border-left: 4px solid #AF9500;
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a,
+.page-sidebar .page-sidebar-menu>li>a {
+    border-top: 1px solid #fff;
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a>i,
+.page-sidebar .page-sidebar-menu>li>a>i {
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li:hover>a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li.open>a,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li:hover>a,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li.open>a {
+    background: #CCB33B;
+    color: white;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu.page-sidebar-menu-light>li .sub-menu,
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li .sub-menu {
+    background: transparent;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a>i[class^="icon-"],
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a>i[class*="icon-"],
+.page-sidebar .page-sidebar-menu>li>a>i[class^="icon-"],
+.page-sidebar .page-sidebar-menu>li>a>i[class*="icon-"] {
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li:hover>a>i,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.open>a>i,
+.page-sidebar .page-sidebar-menu>li:hover>a>i,
+.page-sidebar .page-sidebar-menu>li.open>a>i {
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-search .input-group .form-control,
+.page-sidebar .sidebar-search .input-group .form-control {
+    background-color: transparent;
+    color: #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-search .input-group,
+.page-sidebar .sidebar-search .input-group {
+    border-bottom: 1px solid #fff;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-search .input-group .form-control::-webkit-input-placeholder,
+.page-sidebar .sidebar-search .input-group .form-control::-webkit-input-placeholder {
+    color: #f1f1f1;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-search .input-group .input-group-btn .btn>i,
+.page-sidebar .sidebar-search .input-group .input-group-btn .btn>i {
+    color: #f1f1f1;
+}
+
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li .sub-menu>li.active>a {
+    background: #ffffff26 !important;
+}
+
+.page-sidebar-menu.page-sidebar-menu-light>li .sub-menu>li:hover>a {
+    background: #ffffff26 !important;
+}
+
+.page-sidebar .page-sidebar-menu.page-sidebar-menu-light>li .sub-menu>li:hover>a {
+    background: #26715d !important;
+}
+
+
+/* ---------------------------------------end sidebar--------------------------------------------------------------------------- */
+
+
+/* ---------------------------- date v2 -----------------------------------*/
+
+.clock {
+    text-align: center;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background: #003924;
+}
+
+h4.servertime {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 5px #cde745;
+}
+
+#Date {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0 0 5px #cde745;
+}
+
+ul.timer-ul {
+    /* width: 800px; */
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+ul.timer-ul li {
+    display: inline;
+    font-size: 30px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px #cde745;
+}
+
+#point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@-webkit-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #cde745;
+    }
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #cde745;
+    }
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #cde745;
+    }
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #cde745;
+    }
 }

@@ -57,6 +57,8 @@
     <!-- delete alert cdn -->
     <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js" type="text/javascript"></script>
 
+    
+
 <!-- END PAGE LEVEL PLUGINS -->
 <script>
         jQuery(document).ready(function() {       

@@ -42,9 +42,9 @@ class Page extends CI_Controller{
       }
       function bidder(){
         //Allowing access to staff only
-        if($this->session->userdata('type')==='bidder')
+        if($this->session->userdata('type')==='BIDDER')
         {
-          $this->load->view('dashboard_view_bidder');
+          $this->load->view('BIDDER/dashboard_view');
         }
         else
         {

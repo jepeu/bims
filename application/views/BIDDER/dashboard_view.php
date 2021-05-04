@@ -1,6 +1,6 @@
 <?php 
-    $this->load->view('BAC/layouts/head');
-    $this->load->view('BAC/layouts/header');
+    $this->load->view('BIDDER/layouts/head');
+    $this->load->view('BIDDER/layouts/header');
     // $this->load->view('BAC/layouts/sidebar');
 ?>
 
@@ -10,16 +10,9 @@
 <div class="page-container">
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
-		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
-			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+
 			<ul class="page-sidebar-menu page-sidebar-menu-light " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
 				<li class="sidebar-toggler-wrapper">
@@ -31,8 +24,6 @@
 				<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 				<li class="sidebar-search-wrapper">
 					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
-					<!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
 					<form class="sidebar-search " action="extra_search.html" method="POST">
 						<a href="javascript:;" class="remove">
 						<i class="icon-close"></i>
@@ -47,15 +38,9 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li class="active start dashboard">
-					<a href="http://localhost/bims/page/staff.html">
+					<a href="/bims/page/bidder.html">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
-					</a>
-				</li>
-				<li class="announcement">
-					<a href="javascript:;">
-					<i class="fas fa fa-bullhorn"></i>
-					<span class="title">Announcement</span>
 					</a>
 				</li>
 				<li class="user_management">
@@ -66,59 +51,38 @@
 					<span class="arrow open"></span>
 					</a>
 					<ul class="sub-menu">
-						<li class="certified_bidder">
-							<a href="http://localhost/bims/usermanagement/certified-bidder.html">
-							List Of Certified Bidder</a>
+						<li class="">
+							<a href="#">
+							My Account</a>
 						</li>
-						<li class="new_bidder_entry">
-							<a href="http://localhost/bims/usermanagement/new-entry.html">
-							List Of New Bidder Entry</a>
+						<li class="">
+							<a href="#">
+							My Documents</a>
 						</li>
 					</ul>
 				</li>
 				<li class="tender_management">
 					<a href="javascript:;">
 					<i class="icon-diamond"></i>
-					<span class="title">Tender Management</span>
+					<span class="title">Bid Management</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li class="list_of_tender">
-							<a href="http://localhost/bims/tendermanagement.html">
-							List Of Tenders</a>
-						</li>
-						<li class="bids_submitted">
+						<li class="">
 							<a href="#">
-							Bids Submitted</a>
+							Search Active Tenders</a>
 						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;">
-					<i class="icon-briefcase"></i>
-					<span class="title">Bid Opening</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="http://localhost/bims/bidopening.html">
-							Tenders</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;">
-					<i class="icon-bar-chart"></i>
-					<span class="title">Bid Evaluation</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
+						<li class="">
 							<a href="#">
-							Technical Evaluation</a>
+							My Active Bids</a>
+						</li>
+						<li class="">
+							<a href="#">
+							My Bid History</a>
 						</li>
 					</ul>
 				</li>
+
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>
@@ -280,7 +244,7 @@
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
-					<div class="dashboard-stat green-light">
+					<div class="dashboard-stat blue-madison">
 						<div class="visual">
 							<i class="fa fa-briefcase fa-icon-medium"></i>
 						</div>
@@ -292,7 +256,7 @@
 								 Registrations today
 							</div>
 						</div>
-						<a class="more green-dark" href="javascript:;">
+						<a class="more" href="javascript:;">
 						View more <i class="m-icon-swapright m-icon-white"></i>
 						</a>
 					</div>
@@ -340,6 +304,6 @@
     <!-- END CONTENT -->
     
     <?php
-        $this->load->view('BAC/layouts/quick_sidebar');
-        $this->load->view('BAC/layouts/footer');
+        $this->load->view('BIDDER/layouts/quick_sidebar');
+        $this->load->view('BIDDER/layouts/footer');
     ?>

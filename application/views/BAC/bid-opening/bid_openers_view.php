@@ -3,6 +3,9 @@
 	 $this->load->view('BAC/layouts/header');
 ?>  
 	   <style>
+	   		.admins_row {
+				padding: 30px 10px!important;
+			}
 	   		#decryptForm{
 				display: flex; 
 				flex-wrap: wrap;
@@ -21,12 +24,17 @@
 				z-index: 5;
 			} 	
 			.circle {
-				background: #f00;
 				width: 20px;
 				height: 20px;	
 				border-radius: 50%;
 				margin: auto;
 				margin-top: 10px;
+			}
+			.decript_lock{
+				background: #f00;
+			}
+			.decript_unlock{
+				background-color: green;
 			}
 			.userbox{
 				margin: 10px;
@@ -406,9 +414,9 @@
                         </div>
 						
 						<div class="portlet-body row admins_row">
-						<div style="text-align: center; margin: 20px 0">
+						<!-- <div style="text-align: center; margin: 20px 0">
 							<button class="buttonload btn btn-primary"><i class="refresh_icon"></i>refresh</button>
-						</div>
+						</div> -->
 							<div class="openers_data">
 								<!-- ajax load here ----------------------------------------------------------------------->
 							</div>
@@ -465,9 +473,8 @@
 				var opener_id = $('#opener_id').val();
 				var project_id = $('#project_id').val();
 
-				// console.log(decryptData);
-				console.log(opener_id);
-				console.log(project_id);
+				// console.log(opener_id);
+				// console.log(project_id);
 				var ajaxurl = "<?php echo site_url();?>BidOpeningController/decrypt_project";
 
 				var data = { 
@@ -502,17 +509,17 @@
 			
 		});
 		// refresh every 5 seconds
-		setInterval(function(){ 
-				$.ajax({
-					type  : 'get',
-					url   : '<?php echo base_url('BidOpeningController/bid_openers_ajax_show')?>/<?php echo $projects_id ?>',
-					async : true,
-					success : function(data){
-						console.log("refresh ajax data");
-						$('.openers_data').html(data);
-					}
-				});
-			}, 3000);
+		// setInterval(function(){ 
+		// 	$.ajax({
+		// 		type  : 'get',
+		// 		url   : '<?php echo base_url('BidOpeningController/bid_openers_ajax_show')?>/<?php echo $projects_id ?>',
+		// 		async : true,
+		// 		success : function(data){
+		// 			console.log("refresh ajax data");
+		// 			$('.openers_data').html(data);
+		// 		}
+		// 	});
+		// }, 5000);
 	});
 
 
