@@ -67,3 +67,6 @@ $route['tendermanagement/create'] = 'TenderManagementController/create';
 
 $route['usermanagement/certified-bidder'] = 'UserManagementController/index';
 $route['usermanagement/new-entry'] = 'UserManagementController/index2';
+
+// bidder
+$route['bidderbidmanagement/list-of-tenders'] = 'BidderBidManagementController/index';

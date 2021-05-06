@@ -1,10 +1,17 @@
-<?php 
-    $this->load->view('BIDDER/layouts/head');
-    $this->load->view('BIDDER/layouts/header');
-    // $this->load->view('BAC/layouts/sidebar');
-?>
+ <?php 
+	$this->load->view('BIDDER/layouts/head');
+	$this->load->view('BIDDER/layouts/header');
+	// $this->load->view('BAC/layouts/sidebar');
+ ?>
+ 
+ <style>
+	.portlet-title {
+		background-color: #003924!important;
+	}
+ </style>
+ 
 
-<div class="clearfix">
+ <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
@@ -37,7 +44,7 @@
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li class="active start dashboard">
+				<li class="dashboard">
 					<a href="/bims/page/bidder.html">
 					<i class="icon-home"></i>
 					<span class="title">Dashboard</span>
@@ -61,10 +68,10 @@
 						</li>
 					</ul>
 				</li>
-				<li class="">
+				<li class="active open">
 					<a href="javascript:;">
 					<i class="icon-diamond"></i>
-					<span class="title">Bid Management</span>
+					<span class=" title">Bid Management</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
@@ -72,7 +79,7 @@
 							<a href="#">
 							Search Active Tenders</a>
 						</li>
-						<li class="">
+						<li class="active">
 							<a href="/bims/bidderbidmanagement/list-of-tenders">
 							New Tenders</a>
 						</li>
@@ -115,7 +122,7 @@
 	
 	
 
-<!-- BEGIN CONTENT -->
+ <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
 		<div class="page-content">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
@@ -234,7 +241,7 @@
 			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Dashboard
+			Bid Management
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -267,68 +274,101 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-			<!-- <div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
-					<div class="dashboard-stat blue-madison">
-						<div class="visual">
-							<i class="fa fa-briefcase fa-icon-medium"></i>
-						</div>
-						<div class="details">
-							<div class="number">
-								 0
+            <div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN EXAMPLE TABLE PORTLET-->
+					<div class="portlet box grey-cascade">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-globe"></i>List Of Tenders
 							</div>
-							<div class="desc">
-								 Registrations today
+							<div class="tools">
+								<a href="javascript:;" class="collapse" data-original-title="" title="">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
+								</a>
+								<a href="javascript:;" class="reload" data-original-title="" title="">
+								</a>
+								<a href="javascript:;" class="remove" data-original-title="" title="">
+								</a>
 							</div>
 						</div>
-						<a class="more" href="javascript:;">
-						View more <i class="m-icon-swapright m-icon-white"></i>
-						</a>
+						<div class="portlet-body">
+							<div class="table-toolbar">
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<div class="btn-group pull-right">
+											<button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+											</button>
+											<ul class="dropdown-menu pull-right">
+												<li>
+													<a href="javascript:;">
+													Print </a>
+												</li>
+												<li>
+													<a href="javascript:;">
+													Save as PDF </a>
+												</li>
+												<li>
+													<a href="javascript:;">
+													Export to Excel </a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="sample_1_wrapper" class="dataTables_wrapper no-footer"><div class="row"><div class="col-md-6 col-sm-6"><div class="dataTables_length" id="sample_1_length"><label>Show <select name="sample_1_length" aria-controls="sample_1" class="form-control input-xsmall input-inline"><option value="5">5</option><option value="15">15</option><option value="20">20</option><option value="-1">All</option></select> records</label></div></div><div class="col-md-6 col-sm-6"><div id="sample_1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-small input-inline" placeholder="" aria-controls="sample_1"></label></div></div></div><div class="table-scrollable">
+								<table class="table table-striped table-bordered table-hover dataTable no-footer" id="sample_1" role="grid" aria-describedby="sample_1_info">
+									<thead>
+										<tr role="row">
+											<th class="sorting_asc" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column ascending" style="width: 287px;">#</th>
+											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Email" style="width: 472px;">Description</th>
+											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Points" style="width: 177px;">Project Type</th>
+											<th class="sorting" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" aria-label="Joined: activate to sort column ascending" style="width: 258px;">Bid Opening Date</th>
+											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Approved Budget Cost</th>
+											<th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Status" style="width: 267px;">Status</th>
+										</tr>
+									</thead>
+									<tbody class="table_data" >
+									
+									</tbody>
+								</table>
+
+							</div><div class="row"><div class="col-md-5 col-sm-5"><div class="dataTables_info" id="sample_1_info" role="status" aria-live="polite">Showing 1 to 15 of 25 records</div></div><div class="col-md-7 col-sm-7"><div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate"><ul class="pagination" style="visibility: visible;"><li class="prev disabled"><a href="#" title="First"><i class="fa fa-angle-double-left"></i></a></li><li class="prev disabled"><a href="#" title="Prev"><i class="fa fa-angle-left"></i></a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li class="next"><a href="#" title="Next"><i class="fa fa-angle-right"></i></a></li><li class="next"><a href="#" title="Last"><i class="fa fa-angle-double-right"></i></a></li></ul></div></div></div></div>
+						</div>
 					</div>
+					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<div class="dashboard-stat red-intense">
-						<div class="visual">
-							<i class="fa fa-shopping-cart"></i>
-						</div>
-						<div class="details">
-							<div class="number">
-								 0
-							</div>
-							<div class="desc">
-								 Tenders to be open today
-							</div>
-						</div>
-						<a class="more" href="javascript:;">
-						View more <i class="m-icon-swapright m-icon-white"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-					<div class="dashboard-stat green-haze">
-						<div class="visual">
-							<i class="fa fa-group fa-icon-medium"></i>
-						</div>
-						<div class="details">
-							<div class="number">
-								 0
-							</div>
-							<div class="desc">
-								 Projects
-							</div>
-						</div>
-						<a class="more" href="javascript:;">
-						View more <i class="m-icon-swapright m-icon-white"></i>
-						</a>
-					</div>
-				</div>
-			</div> -->
+			</div>
+
+			
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
-    <!-- END CONTENT -->
-    
-    <?php
-        $this->load->view('BIDDER/layouts/quick_sidebar');
-        $this->load->view('BIDDER/layouts/footer');
-    ?>
+	<!-- END CONTENT -->
+
+ 
+	<?php 
+		$this->load->view('BIDDER/layouts/quick_sidebar');
+		$this->load->view('BIDDER/layouts/footer');
+	?>
+
+
+<script>
+        jQuery(document).ready(function() {
+
+			// get data from project table
+			$.ajax({
+				type  : 'get',
+				url   : '<?php echo base_url('BidderBidManagementController/ajax_table_projects_show')?>',
+				async : true,
+				success : function(data){
+					
+					$('.table_data').html(data);
+				}
+			});
+        });
+	</script>
