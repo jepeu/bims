@@ -111,8 +111,8 @@
               <div class="row">
                 <div class="col-md-6 align-self-center">
                   <div class="right-content">
-                    <span>our solid background on finance</span>
-                    <h2>Get to know about <em>our company</em></h2>
+                    <span>our solid background</span>
+                    <h2>Get to know about <em>MPDO</em></h2>
                     <p>Fusce nec ultrices lectus. Duis nec scelerisque risus. Ut id tempor turpis, ac dignissim ipsum. Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem. 
                     <br><br>Pellentesque in sagittis lacus, vel auctor sem. Quisque eu quam eleifend, ullamcorper dui nec, luctus quam.</p>
                     <a href="" class="filled-button">Read More</a>

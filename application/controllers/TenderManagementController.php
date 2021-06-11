@@ -89,6 +89,7 @@ class TenderManagementController extends CI_Controller
                 'opening_date' 	=> $this->input->post('opening_date'), 
                 'approve_budget_cost' 	=> $this->input->post('approve_budget_cost'), 
                 'projects_status' 	=> $this->input->post('projects_status'), 
+                'delete_status' 	=> '0', 
                 'ITB_path' => "/assets/uploads/invitation-to-bid/".$data['upload_data']['file_name']
             );
         }

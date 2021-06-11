@@ -391,7 +391,7 @@ header .navbar {
 
 .Grid1k {
     padding: 0 15px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -647,7 +647,7 @@ ul.slick-dots {
 /* Services */
 
 .services {
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 .service-item img {
@@ -675,13 +675,13 @@ ul.slick-dots {
 /* Fun Facts */
 
 .fun-facts {
-    margin-top: 140px;
+    margin-top: 100px;
     background-image: url(../images/fun-facts-bg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding: 140px 0px;
+    padding: 100px 0px;
     color: #fff;
 }
 
@@ -739,7 +739,7 @@ ul.slick-dots {
 /* More Info */
 
 .more-info {
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 .more-info .left-image img {
@@ -796,9 +796,9 @@ ul.slick-dots {
 }
 
 .testimonials {
-    margin-top: 140px;
+    margin-top: 100px;
     background-color: #f7f7f7;
-    padding: 140px 0px;
+    padding: 100px 0px;
 }
 
 .testimonial-item .inner-content {
@@ -840,12 +840,12 @@ ul.slick-dots {
 
 .callback-services {
     border-top: 1px solid #eee;
-    padding-top: 140px;
+    padding-top: 100px;
 }
 
 .contact-us {
     background-color: #f7f7f7;
-    padding: 140px 0px;
+    padding: 100px 0px;
 }
 
 .contact-us .contact-form {
@@ -854,7 +854,8 @@ ul.slick-dots {
 }
 
 .callback-form {
-    margin-top: 140px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .callback-form .contact-form {
@@ -886,9 +887,9 @@ ul.slick-dots {
 
 .callback-form .contact-form textarea {
     border-radius: 20px;
-    height: 120px;
+    height: 100px;
     max-height: 200px;
-    min-height: 120px;
+    min-height: 100px;
     display: inline-block;
     padding: 15px;
     color: #6a6a6a;
@@ -966,14 +967,14 @@ ul.slick-dots {
 
 /* Partners Style */
 
-.contact-partners {
+
+/* .contact-partners {
     margin-top: -8px!important;
 }
 
 .partners {
-    margin-top: 140px;
+    margin-top: 100px;
     background-color: #f7f7f7;
-    padding: 60px 0px;
 }
 
 .partners .owl-item {
@@ -984,7 +985,7 @@ ul.slick-dots {
 .partners .partner-item img {
     max-width: 156px;
     margin: auto;
-}
+} */
 
 
 /* Footer Style */
@@ -1078,9 +1079,9 @@ footer .contact-form input:focus {
 
 footer .contact-form textarea {
     border-radius: 20px;
-    height: 120px;
+    height: 100px;
     max-height: 200px;
-    min-height: 120px;
+    min-height: 100px;
     display: inline-block;
     padding: 15px;
     color: #aaa!important;
@@ -1186,9 +1187,9 @@ footer .contact-form button.filled-button:hover {
 
 .team {
     background-color: #f7f7f7;
-    margin-top: 140px;
-    margin-bottom: -140px;
-    padding: 120px 0px;
+    margin-top: 100px;
+    margin-bottom: -100px;
+    padding: 100px 0px;
 }
 
 .team-item img {
@@ -1224,7 +1225,7 @@ footer .contact-form button.filled-button:hover {
 /* Single Service */
 
 .single-services {
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 #tabs ul {
@@ -1305,7 +1306,7 @@ footer .contact-form button.filled-button:hover {
 /* Contact Information */
 
 .contact-information {
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 .contact-information .contact-item {

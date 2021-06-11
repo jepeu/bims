@@ -718,8 +718,6 @@
 					cache:false,
 					async:false,
 					success: function(response){
-						alert("success");
-						console.log(response.join(' '));
 						$.ajax({
 							type  : 'get',
 							url   : '<?php echo site_url('TenderManagementController/ajax_table_projects_show')?>',
