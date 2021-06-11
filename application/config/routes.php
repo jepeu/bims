@@ -59,6 +59,11 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 $route['login-register'] = 'loginregister/index';
+$route['about'] = 'HomeController/about';
+$route['services'] = 'HomeController/services';
+$route['contact'] = 'HomeController/contact';
+
+
 $route['bidopening'] = 'BidOpeningController';
 $route['bidOpening/bid_openers/(:any)'] = 'BidOpeningController/bid_openers/$1';
 

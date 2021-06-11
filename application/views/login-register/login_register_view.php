@@ -56,7 +56,7 @@
 			<!-- BEGIN LOGO -->
 			<div class="logo">
 				<a href="http://localhost/bims/">
-				<img src="<?php echo base_url()."assets/"; ?>logo/manticao-logo.png" alt=""/>
+				<img src="<?php echo base_url()."assets/"; ?>logo/bims-logo.svg" alt=""/>
 				</a>
 			</div>
 			<!-- END LOGO -->

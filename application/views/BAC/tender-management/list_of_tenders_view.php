@@ -92,6 +92,19 @@
 		.contact-form .square-button:focus {
 			background-color: white;
 		}
+		.invitation{
+			text-align: center;
+		}
+		.invitation > label{
+
+			font-size: 18px!important;
+   			margin-bottom: 15px;
+		}
+		.invitation input{
+			width: 50%;
+			margin: auto;
+		}
+		
  </style>
  
  <div class="clearfix">
@@ -460,7 +473,7 @@
 						</div>
 						<div class="modal-body">
 							<div class="slimScrollDiv" style="position: relative;  width: auto; height: auto"><div class="scroller" style="height: auto;  width: auto; padding-right: 0px;" data-always-visible="1" data-rail-visible1="1" data-initialized="1">
-								<form class="form-horizontal contact-form" id="create_new_tender" role="form" method="post">
+								<form class="form-horizontal contact-form" id="create_new_tender_form" role="form" method="post" enctype="multipart/form-data">
 									<div class="form-body">
 										<div class="input-block">
 											<label for="">Projects Description</label>
@@ -497,7 +510,11 @@
 											<input type="text" class="form-control" name="projects_status" id="projects_status" value="new" readonly>
 										</div>
 									</div>
-									<div class="form-actions">
+									<div class="form-body invitation">
+											<label for="">Invitation To Bid</label>
+											<input type="file" class="form-control" name="file" id="invitation_to_bid" required>
+									</div>
+									<div class="form-actions invitation">
 										<div class="row">
 											<div class="col-md-12" style="text-align: center;">
 												<!-- <input type="hidden" name="projects_id" value="<?php echo $projects_id; ?>" /> -->
@@ -687,47 +704,41 @@
 
 
             //Add new tender
-            jQuery('#create_new_tender').submit('click',function(e){
+            jQuery('#create_new_tender_form').on('submit',function(e){
                 e.preventDefault();
-                var p_description = $('#projects_description').val();
-                var p_type = $('#projects_type').val();
-                var o_date = $('#opening_date').val();
-                var abc = $('#approve_budget_cost').val();
-                var p_status = $('#projects_status').val();
+				// var regdata = $(this).serialize();
+				// console.log(regdata);
+				$.ajax({
+					url: "<?php echo base_url(); ?>TenderManagementController/create",
+					type: "POST",
+					// data: regdata,
+					data:new FormData(this),
+					processData:false,
+					contentType:false,
+					cache:false,
+					async:false,
+					success: function(response){
+						alert("success");
+						console.log(response.join(' '));
+						$.ajax({
+							type  : 'get',
+							url   : '<?php echo site_url('TenderManagementController/ajax_table_projects_show')?>',
+							async : true,
+							success : function(data){
+								
+								$('.table_data').html(data);
+								$('#create_new_tender').modal('hide');
 
-                var ajaxurl = "<?php echo base_url(); ?>TenderManagementController/create";
-
-                var data = { 
-                             projects_description: p_description,
-                             projects_type: p_type,
-							 opening_date: o_date,
-							 approve_budget_cost: abc,
-							 projects_status: p_status
-                        };
-
-                jQuery.post(ajaxurl, data, function(response) {
-                    $.ajax({
-						type  : 'get',
-						url   : '<?php echo site_url('TenderManagementController/ajax_table_projects_show')?>',
-						async : true,
-						success : function(data){
-							
-							$('.table_data').html(data);
-							$('#create_new_tender').modal('hide');
-
-							// reset to null value
-							$('#projects_description').val("");
-							$('#projects_type').val("");
-							$('#opening_date').val();
-							$('#approve_budget_cost').val("");
-						}
-		
-					});
-                                                            
-                }).fail(function(xhr, status, error) {
-                        console.log(status);
-                        console.log(error);
-                });
+								// reset to null value
+								$('#projects_description').val("");
+								$('#projects_type').val("");
+								$('#opening_date').val();
+								$('#approve_budget_cost').val("");
+							}
+						});
+					}
+				});
+			
             });
 
         });

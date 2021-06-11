@@ -81,11 +81,11 @@ class LoginRegister extends CI_Controller{
                     'imgpath' => "/assets/uploads/".$data['upload_data']['file_name']
                 ); 
 
-                $result= $this->db->insert('users', $userData);
+                $this->db->insert('users', $userData);
                 
-                if ($result == TRUE) {
-                    echo "true";
-                }
+                // if ($result == TRUE) {
+                //     echo "true";
+                // }
             }
     } 
 

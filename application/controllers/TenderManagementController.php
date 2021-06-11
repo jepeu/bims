@@ -45,7 +45,7 @@ class TenderManagementController extends CI_Controller
                     <td>'.$projects->projects_description.'</td>
                     <td>'.$projects->projects_type.'</td>
                     <td>'. $projects->opening_date .'</td>
-                    <td>'.$projects->approve_budget_cost.'</td>
+                    <td> ₱ '.$projects->approve_budget_cost.'</td>
                     <td>'. $projects->projects_status.'</td>
                     ';
                         // var_dump($user[0]->user_type);
@@ -76,16 +76,26 @@ class TenderManagementController extends CI_Controller
         $sql="Select user_id from users where user_type='HEAD-BAC' or user_type='HEAD-TWG'"; 
         $query = $this->db->query($sql)->result();
 
-        $data = array(				
-            'projects_description' 		=> $this->input->post('projects_description'), 
-            'projects_type' 	=> $this->input->post('projects_type'), 
-            'opening_date' 	=> $this->input->post('opening_date'), 
-            'approve_budget_cost' 	=> $this->input->post('approve_budget_cost'), 
-            'projects_status' 	=> $this->input->post('projects_status'), 
-        );
+        $config['upload_path']="./assets/uploads/invitation-to-bid";
+        $config['allowed_types']='gif|jpg|png|pdf';
+        $this->load->library('upload',$config);
 
-        $this->db->insert('projects',$data);
+        if($this->upload->do_upload("file")){
+            $data = array('upload_data' => $this->upload->data());
+            $project_data = array(		
+                		
+                'projects_description' 		=> $this->input->post('projects_description'), 
+                'projects_type' 	=> $this->input->post('projects_type'), 
+                'opening_date' 	=> $this->input->post('opening_date'), 
+                'approve_budget_cost' 	=> $this->input->post('approve_budget_cost'), 
+                'projects_status' 	=> $this->input->post('projects_status'), 
+                'ITB_path' => "/assets/uploads/invitation-to-bid/".$data['upload_data']['file_name']
+            );
+        }
+
+        $this->db->insert('projects',$project_data);
         $last_id = $this->db->insert_id();
+
         foreach($query as $user_data)
         {
             $data2 = array(				
