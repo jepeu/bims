@@ -62,6 +62,8 @@ $route['login-register'] = 'loginregister/index';
 $route['about'] = 'HomeController/about';
 $route['services'] = 'HomeController/services';
 $route['contact'] = 'HomeController/contact';
+$route['invitation-to-bid'] = 'HomeController/invitation_to_bid';
+
 
 
 $route['bidopening'] = 'BidOpeningController';
