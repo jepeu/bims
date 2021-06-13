@@ -1,279 +1,295 @@
-<?php 
-	$this->load->view('layouts/head');
-	$this->load->view('layouts/header');
- ?> 
- 
- <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="main-home main-banner header-text" id="top">
-        <div class="Modern-Slider">
-          <!-- Item -->
-          <div class="item item-1">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6>we are ready to help you</h6>
-                  <h4>Lorem Ipsum Dolor<br>&amp; Amet</h4>
-                  <p>This finance HTML template is 100% free of charge provided by TemplateMo for everyone. You can download, edit and use this layout for your business website.</p>
-                  <a href="contact.html" class="filled-button">contact us</a>
-                </div>
-            </div>
-          </div>
-          <!-- // Item -->
-          <!-- Item -->
-          <div class="item item-2">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6>we are here to support you</h6>
-                  <h4>Lorem Ipsum Dolor<br>&amp; Amet</h4>
-                  <p>You are allowed to use this template for your company websites. You are NOT allowed to re-distribute this template ZIP file on any template download website. Please contact TemplateMo for more detail.</p>
-                  <a href="services.html" class="filled-button">our services</a>
-                </div>
-            </div>
-          </div>
-          <!-- // Item -->
-          <!-- Item -->
-          <div class="item item-3">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6>we have a solid background</h6>
-                  <h4>Lorem Ipsum Dolor<br>&amp; Amet</h4>
-                  <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate mi. Sed nec cursus augue. Phasellus lacinia ac sapien vitae dapibus. Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
-                  <a href="about.html" class="filled-button">learn more</a>
-                </div>
-            </div>
-          </div>
-          <!-- // Item -->
-        </div>
-    </div>
-    <!-- Banner Ends Here -->
+<!DOCTYPE html>
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>Bidding Management System | Login</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="<?php echo base_url()."assets/"; ?>admin/pages/css/login.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME STYLES -->
+<link href="<?php echo base_url()."assets/"; ?>global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>global/css/plugins-md.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url()."assets/"; ?>admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="<?php echo base_url()."assets/"; ?>admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-md login">
+<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+<div class="menu-toggler sidebar-toggler">
+</div>
+<!-- END SIDEBAR TOGGLER BUTTON -->
 
-    <div class="request-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h4>Request a call back right now ?</h4>
-            <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
-          </div>
-          <div class="col-md-4">
-            <a href="contact.html" class="border-button">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<style>
+	.main-container {
+		background-image: url(assets/images/testbg2.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	a {
+		color: #fff;
+	}
+	a:hover{
+		color: #4db3a5;
+	}
+</style>
+<div class="main-container">
+	<div class="sub">
+			<!-- BEGIN LOGO -->
+			<div class="logo">
+				<a href="http://localhost/bims/">
+				<img src="<?php echo base_url()."assets/"; ?>logo/bims-logo.svg" alt=""/>
+				</a>
+			</div>
+			<div class="form-action btn btn-success uppercase" >
+			<a title="Return to BIMS SITE" href="http://localhost/bims/" style="text-decoration:none"
+				itemprop="url">
+				<i class="fa fa-arrow-left " aria-hidden="true"></i> Back to Main Site</a>
+			</div>
 
-    <div class="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Lorem Ipsum  <em>Dolor</em></h2>
-              <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="<?php echo base_url()."assets/";?>custom/assets/images/service_01.jpg" alt="">
-              <div class="down-content">
-                <h4>Lorem Ipsum</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="<?php echo base_url()."assets/";?>custom/assets/images/service_02.jpg" alt="">
-              <div class="down-content">
-                <h4>Lorem Ipsum</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="<?php echo base_url()."assets/";?>custom/assets/images/service_03.jpg" alt="">
-              <div class="down-content">
-                <h4>Lorem Ipsum</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+			<!-- END LOGO -->
+			<!-- BEGIN LOGIN -->
+			<div class="content">
+				<!-- BEGIN LOGIN FORM -->
+				
 
-    <div class="fun-facts">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="left-content">
-              <span>Lorem ipsum dolor sit amet</span>
-              <h2>Our solutions for your <em>business growth</em></h2>
-              <p>Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue. 
-              <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
-              <a href="" class="filled-button">Read More</a>
-            </div>
-          </div>
-          <div class="col-md-6 align-self-center">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">945</div>
-                  <div class="count-title">Work Hours</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">1280</div>
-                  <div class="count-title">Great Reviews</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">578</div>
-                  <div class="count-title">Projects Done</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">26</div>
-                  <div class="count-title">Awards Won</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<div>
+					<form class="login-form" action="<?php echo site_url('loginregister/auth');?>" method="post">
+						<h3 class="form-title" style="margin-bottom: 4vh;">Login</h3>
+						<?php echo $this->session->flashdata('msg');?>
+						<div class="alert alert-danger display-hide">
+							<button class="close" data-close="alert"></button>
+							<span>
+							Enter any username and password. </span>
+						</div>
+						<div class="form-group">
+							<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+							<label class="control-label visible-ie8 visible-ie9">Username</label>
+							<input class="form-control form-control-solid placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email" required/>
+						</div>
+						<div class="form-group">
+							<label class="control-label visible-ie8 visible-ie9">Password</label>
+							<input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" required/>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-success uppercase">Login</button>
+							<label class="rememberme check">
+							<input type="checkbox" name="remember" value="remember-me"/>Remember </label>
+							<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+						</div>
+						<div class="login-options">
+							<h4>Or login with</h4>
+							<ul class="social-icons">
+								<li>
+									<a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
+								</li>
+								<li>
+									<a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
+								</li>
+								<li>
+									<a class="social-icon-color googleplus" data-original-title="Goole Plus" href="javascript:;"></a>
+								</li>
+								<li>
+									<a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
+								</li>
+							</ul>
+						</div>
+						<div class="create-account">
+							<p>
+								<a href="javascript:;" id="register-btn" class="uppercase">Create an account</a>
+							</p>
+						</div>
+					</form>
+					<!-- END LOGIN FORM -->
+					<!-- BEGIN FORGOT PASSWORD FORM -->
+					<form class="forget-form" action="index.html" method="post">
+						<h3>Forget Password ?</h3>
+						<p>
+							Enter your e-mail address below to reset your password.
+						</p>
+						<div class="form-group">
+							<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
+						</div>
+						<div class="form-actions">
+							<button type="button" id="back-btn" class="btn btn-default">Back</button>
+							<button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+						</div>
+					</form>
+					<!-- END FORGOT PASSWORD FORM -->
+				</div>
 
-    <div class="more-info">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="more-info-content">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="left-image">
-                    <img src="<?php echo base_url()."assets/";?>custom/assets/images/more-info.jpg" alt="">
-                  </div>
-                </div>
-                <div class="col-md-6 align-self-center">
-                  <div class="right-content">
-                    <span>Who we are</span>
-                    <h2>Get to know about <em>Manticao</em></h2>
-                    <p>Curabitur pulvinar sem a leo tempus facilisis. Sed non sagittis neque. Nulla conse quat tellus nibh, id molestie felis sagittis ut. Nam ullamcorper tempus ipsum in cursus<br><br>Praes end at dictum metus. Morbi id hendrerit lectus, nec dapibus ex. Etiam ipsum quam, luctus eu egestas eget, tincidunt</p>
-                    <a href="#" class="filled-button">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<!-- ------------------------------------------------- Register-------------------------------------------------------------------------------------- -->
+				<!-- BEGIN REGISTRATION FORM -->
+				<!-- Status message -->
+				<?php  
+					if(!empty($success_msg)){ 
+						echo '<p class="status-msg success">'.$success_msg.'</p>'; 
+					}elseif(!empty($error_msg)){ 
+						echo '<p class="status-msg error">'.$error_msg.'</p>'; 
+					} 
+				?>
+		
+				<form id="regformid" class="register-form" method="post" enctype="multipart/form-data">
+					<h3 style="margin-bottom: 4vh;">Register</h3>
 
-    <div class="testimonials">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>What they say <em>about us</em></h2>
-              <span>testimonials from our greatest clients</span>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="owl-testimonials owl-carousel">
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>George Walker</h4>
-                  <span>Chief Financial Analyst</span>
-                  <p>"Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem sit amet quam. Pellentesque in sagittis lacus."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>John Smith</h4>
-                  <span>Market Specialist</span>
-                  <p>"In eget leo ante. Sed nibh leo, laoreet accumsan euismod quis, scelerisque a nunc. Mauris accumsan, arcu id ornare malesuada, est nulla luctus nisi."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>David Wood</h4>
-                  <span>Chief Accountant</span>
-                  <p>"Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>Andrew Boom</h4>
-                  <span>Marketing Head</span>
-                  <p>"Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+					<div class="row">
+						<div class="col-md-6">
+							<p class="hint">	
+								Enter your personal details below:
+							</p>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">First Name</label>
+								<input class="form-control placeholder-no-fix" type="text" placeholder="First Name"  name="firstname" id="firstname" <?php echo !empty($user['firstname'])?$user['firstname']:''; ?> />
+							</div>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Last Name</label>
+								<input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="lastname" id="lastname" <?php echo !empty($user['lastname'])?$user['lastname']:''; ?>/>
+							</div>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Company Name</label>
+								<input class="form-control placeholder-no-fix" type="text" placeholder="Company Name" name="companyname" id="companyname" <?php echo !empty($user['companyname'])?$user['companyname']:''; ?>/>
+							</div>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Address</label>
+								<input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="address" id="address" <?php echo !empty($user['address'])?$user['address']:''; ?>/>
+							</div>
+							<div class="form-group">
+								<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+								<label class="control-label visible-ie8 visible-ie9">Email</label>
+								<input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email" id="email" <?php echo !empty($user['email'])?$user['email']:''; ?>/>
+							</div>
+							
+						</div>
 
-    <div class="callback-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Request a <em>call back</em></h2>
-              <span>Etiam suscipit ante a odio consequat</span>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="contact-form">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
- 
-  <?php 
-		$this->load->view('layouts/footer');
-	?>
+						<div class="col-md-6">
+							<p class="hint">
+								Enter your account details below:
+							</p>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Username</label>
+								<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" id="username" <?php echo !empty($user['username'])?$user['username']:''; ?>/>
+							</div>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Password</label>
+								<input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password"/>
+							</div>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+								<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" id="rpassword"/>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<p class="hint">
+								Upload your PhilGeps certificate below to verify that you are a certified Bidder:
+							</p>
+							<div class="form-group">
+								<label class="control-label visible-ie8 visible-ie9">PhilGeps Certificate</label>
+								<input class="form-control form-control-lg" name="file" id="image_file" type="file" />
+							</div>
+
+							<div class="form-group margin-top-20 margin-bottom-20">
+								<label class="check">
+								<input type="checkbox" name="tnc"/> I agree to the <a href="javascript:;">
+								Terms of Service </a>
+								& <a href="javascript:;">
+								Privacy Policy </a>
+								</label>
+								<div id="register_tnc_error">
+								</div>
+							</div>
+							<div class="form-actions">
+								<button type="button" id="register-back-btn" class="btn btn-default">Back</button>
+								<button  type="submit" name="signupSubmit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!-- END REGISTRATION FORM -->
+			</div>
+
+			<div class="copyright">
+				2020 © Bidding Information Management System
+			</div>
+	</div>
+</div>
+<!-- END LOGIN -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/respond.min.js"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+
+
+<script>
+	$(document).ready(function(){
+		$('#regformid').on('submit', function(e) {
+		e.preventDefault();
+		// var regdata = $(this).serialize();
+			$.ajax({
+				url: "<?php echo base_url();?>loginregister/registration",
+				type: "POST",
+				// data: regdata,
+				data:new FormData(this),
+				processData:false,
+				contentType:false,
+				cache:false,
+				async:false,
+				success: function(response){
+					alert("success");
+					// $('body').html(response);
+				}
+			});
+	
+	});
+	});
+</script>
+
+
+<script src="<?php echo base_url()."assets/"; ?>global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="<?php echo base_url()."assets/"; ?>global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?php echo base_url()."assets/"; ?>admin/pages/scripts/login.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {     
+Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+Login.init();
+Demo.init();
+});
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
