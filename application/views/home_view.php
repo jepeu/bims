@@ -5,7 +5,7 @@
  
  <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="main-banner header-text" id="top">
+    <div class="main-home main-banner header-text" id="top">
         <div class="Modern-Slider">
           <!-- Item -->
           <div class="item item-1">

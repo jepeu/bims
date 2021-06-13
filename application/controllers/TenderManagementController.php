@@ -77,7 +77,7 @@ class TenderManagementController extends CI_Controller
         $query = $this->db->query($sql)->result();
 
         $config['upload_path']="./assets/uploads/invitation-to-bid";
-        $config['allowed_types']='gif|jpg|png|pdf';
+        $config['allowed_types']='pdf';
         $this->load->library('upload',$config);
 
         if($this->upload->do_upload("file")){

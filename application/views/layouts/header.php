@@ -57,7 +57,7 @@
                 <a class="nav-link" href="/bims/contact">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/bims/invitation-to-bid">Invitations</a>
+                <a class="nav-link" href="/bims/invitation-to-bid">Invitation To Bid</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/bims/login-register">Login/Register</a>

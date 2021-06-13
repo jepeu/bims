@@ -512,6 +512,7 @@
 									</div>
 									<div class="form-body invitation">
 											<label for="">Invitation To Bid</label>
+											<p style="color: #AF9500; font-size: 14px;">Accepts PDF only</p>
 											<input type="file" class="form-control" name="file" id="invitation_to_bid" required>
 									</div>
 									<div class="form-actions invitation">

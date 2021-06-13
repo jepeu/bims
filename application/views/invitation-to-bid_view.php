@@ -10,7 +10,7 @@
     </style>
 
     <!-- Page Content -->
-    <div class="page-heading header-text">
+    <div class="page-heading header-text itb" id="top">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -22,36 +22,42 @@
     </div>
 
     <div class="invitation">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <table id="invitations_table" class="cell-border">
-              <thead>
-                  <tr>
-                      <th>ITB No.</th>
-                      <th>Project</th>
-                      <th>Document</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Row 1 Data 1</td>
-                      <td>Row 1 Data 2</td>
-                      <td>Row 2 Data 2</td>
-                  </tr>
-                  <tr>
-                      <td>Row 2 Data 1</td>
-                      <td>Row 2 Data 2</td>
-                      <td>Row 2 Data 2</td>
-                  </tr>
-              </tbody>
-            </table>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                  <table id="invitations_table" class="cell-border">
+                    <thead>
+                        <tr>
+                            <th>ITB No.</th>
+                            <th>Project</th>
+                            <th>Document</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_data">
+
+                    </tbody>
+                  </table>
+              </div>
+          </div>
         </div>
-      </div>
-     </div>
     </div>
 
 
   <?php 
 		$this->load->view('layouts/footer');
 	?>
+
+<script>
+    jQuery(document).ready(function() {
+        // get data from project table
+        $.ajax({
+          type  : 'get',
+          url   : '<?php echo base_url('HomeController/show_invitation_to_bid')?>',
+          async : true,
+          success : function(data){
+            
+            $('.table_data').html(data);
+          }
+        });
+    });
+	</script>

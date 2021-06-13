@@ -3,7 +3,7 @@
 	$this->load->view('layouts/header');
  ?> 
     <!-- Page Content -->
-    <div class="page-heading header-text">
+    <div class="page-heading header-text contact-us"> 
       <div class="container">
         <div class="row">
           <div class="col-md-12">
